@@ -5,18 +5,8 @@ var passport = require('passport');
 var session = require('express-session');
 var MongoStore = require('connect-mongo')(session);
 var LocalStrategy = require('passport-local').Strategy;
-var http = require('http');
-var https = require('https');
-var fs = require('fs');
-
 
 var app = express();
-
-var sslOptions = {
-  key: fs.readFileSync('key.pem'),
-  cert: fs.readFileSync('cert.pem'),
-  passphrase: 'nishant'
-};
 
 //Make new databse
 mongoose.connect("mongodb://nishant:nishant@ds115573.mlab.com:15573/enigma");
@@ -80,4 +70,4 @@ app.use((err, req, res, next) => {
 });
 
 //Listening
-https.createServer(sslOptions, app).listen(process.env.PORT || 5000);
+app.listen(process.env.PORT || 5000);
