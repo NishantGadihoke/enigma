@@ -39,7 +39,7 @@ QuestionSchema.statics.getQuestion = function(level, callback) {
   Question.findOne({ level: level }).exec(function(err, level) {
     if (!level) {
       var isOver = true;
-      return callback('You have completed Enigma.', isOver);
+      return callback('', isOver);
     }
     var isOver = false;
     return callback(level.question, isOver);

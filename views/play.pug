@@ -7,6 +7,9 @@ block content
       p.error= error
     p
       span.userLevel Level #{currentUser.level}:
+      if isOver
+        <img src="https://imgflip.com/i/1swb24" alt="Tum jeet gayye!" max-width="100%">
+      else
       span.question #{question}
     if !isOver
       form(method='post', action='play')
