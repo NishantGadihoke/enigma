@@ -70,6 +70,4 @@ app.use((err, req, res, next) => {
 });
 
 //Listening
-app.listen(8000, () => {
-  console.log('Express running on Port 8000');
-});
+app.listen(process.env.PORT || 5000);
