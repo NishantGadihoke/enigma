@@ -11,5 +11,5 @@ block content
       p
         span.userLevel Level #{currentUser.level}:
         span.question #{question}
-        form(method='post', action='play')
-          input(type='text', placeholder='Press enter to submit', name='answer', maxlength='30', required)
+      form(method='post', action='play')
+        input(type='text', placeholder='Press enter to submit', name='answer', maxlength='30', required)
