@@ -6,11 +6,11 @@ block content
     if error
       p.error= error
     p
-      span.userLevel Level #{currentUser.level}:
-      if isOver
-        <img src="https://i.imgflip.com/1swb24.jpg" alt="Tum jeet gayye!" max-width="100%">
-      else
+      if !isOver
+        span.userLevel Level #{currentUser.level}:
         span.question #{question}
-    if !isOver
-      form(method='post', action='play')
-        input(type='text', placeholder='Press enter to submit', name='answer', maxlength='30', required)
+        form(method='post', action='play')
+          input(type='text', placeholder='Press enter to submit', name='answer', maxlength='30', required)
+      else
+        <img src="https://i.imgflip.com/1swb24.jpg" alt="Tum jeet gayye!" style="max-width:100%">
+      
