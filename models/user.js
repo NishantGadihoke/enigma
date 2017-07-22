@@ -11,21 +11,21 @@ var UserSchema = new Schema({
       type: Date,
       default: Date.now
     },
-    p1: {
-      pName: String,
-      pEmail: String,
-      pClass: Number
-    },
-    p2: {
-      pName: String,
-      pEmail: String,
-      pClass: Number
-    },
-    p3: {
-      pName: String,
-      pEmail: String,
-      pClass: Number
-    }
+    // p1: {
+    //   pName: String,
+    //   pEmail: String,
+    //   pClass: Number
+    // },
+    // p2: {
+    //   pName: String,
+    //   pEmail: String,
+    //   pClass: Number
+    // },
+    // p3: {
+    //   pName: String,
+    //   pEmail: String,
+    //   pClass: Number
+    // }
 });
 
 UserSchema.plugin(passportLocalMongoose);

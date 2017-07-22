@@ -49,24 +49,10 @@ router.get('/register', (req, res, next) => {
 //REGISTER user
 router.post('/register', function(req, res) {
   User.register(new User({
-    username : req.body.username,
-    email: req.body.email,
-    level: 0,
-    p1: {
-      pName: req.body.p1name,
-      pEmail: req.body.p1email,
-      pClass: req.body.p1class
-    },
-    p2: {
-      pName: req.body.p2name,
-      pEmail: req.body.p2email,
-      pClass: req.body.p2class
-    },
-    p3: {
-      pName: req.body.p3name,
-      pEmail: req.body.p3email,
-      pClass: req.body.p3class
-    }  }), req.body.password, function(err, user) {
+      username : req.body.username,
+      email: req.body.email,
+      level: 0,
+    }), req.body.password, function(err, user) {
     if (err) {
       return res.render('register', { title: 'Register', error : 'That team-name has already been taken.' });
     }
