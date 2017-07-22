@@ -1,0 +1,12 @@
+extends layout
+
+block content
+  .card.question-card
+    if error
+      p.error= error
+    p
+      span.userLevel Level #{currentUser.level}:
+      span.question #{question}
+    if !isOver
+      form(method='post', action='play')
+        input(type='text', placeholder='Answer', name='answer', maxlength='30', required)

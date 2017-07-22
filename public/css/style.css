@@ -1,0 +1,245 @@
+*,
+*:before,
+*:after {
+  -moz-box-sizing: border-box;
+       box-sizing: border-box;
+  -webkit-box-sizing: border-box; }
+
+body {
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  line-height: 1.5;
+  font-family: -apple-system, BlinkMacSystemFont,
+    "Segoe UI", "Roboto", "Oxygen",
+    "Ubuntu", "Cantarell", "Fira Sans",
+    "Droid Sans", "Helvetica Neue", sans-serif;
+  margin: 0;
+  height: 100%;
+  min-height: 100%;
+  color: #000;
+  background: #f5f5f5;
+}
+
+/* Grid System */
+.column,.columns,.container{width:100%;-moz-box-sizing:border-box;box-sizing:border-box}.container{position:relative;width:90%;max-width:960px;margin:0 auto}.column,.columns{float:left}.container:after,.row:after{content:"";display:table;clear:both}@media (min-width:400px){.container{width:85%;padding:0}}@media (min-width:550px){.container{width:80%}.column,.columns{margin-left:4%}.column:first-child,.columns:first-child{margin-left:0}.one.column,.one.columns{width:4.66666666667%}.two.columns{width:13.3333333333%}.three.columns{width:22%}.four.columns{width:30.6666666667%}.five.columns{width:39.3333333333%}.six.columns{width:48%}.seven.columns{width:56.6666666667%}.eight.columns{width:65.3333333333%}.nine.columns{width:74%}.ten.columns{width:82.6666666667%}.eleven.columns{width:91.3333333333%}.twelve.columns{width:100%;margin-left:0}}
+
+/* MAIN STYLING */
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+a:hover {
+  color: #9b58b5;
+}
+
+.left {
+  text-align: left;
+}
+
+.right {
+  text-align: right;
+}
+
+.center {
+  text-align: center;
+}
+
+.float-right {
+  float: right;
+}
+
+p.error {
+  margin: -15px 0 20px 0;
+  text-align: center;
+  font-weight: bold;
+  color: #9b58b5;
+}
+
+section#main {
+  padding: 4vh 0;
+}
+
+header, footer {
+  background: #fff;
+  height: 70px;
+  line-height: 70px;
+}
+
+header nav ul {
+  list-style: none;
+  margin: 0;
+  padding-left: 0;
+}
+
+header nav ul li {
+  display: inline-block;
+  list-style: none;
+}
+
+header nav ul li a {
+  padding: 0 25px;
+  color: inherit;
+  height: 90px;
+  display: block;
+  border: none;
+  text-decoration: none;
+}
+
+.card {
+  width: 510px;
+  max-width: 100%;
+  background: #fff;
+  box-shadow: 1px 2px 1px 0 rgba(0,0,0,0.05);
+  margin: 60px auto;
+  padding: 4%;
+}
+
+.card.question-card {
+  width: 580px;
+  padding: 3%;
+}
+
+.card.leaderboard {
+  width: 980px;
+  padding: 3%;
+}
+
+.card.leaderboard table {
+  width: 100%;
+  text-align: center;
+}
+
+.card.leaderboard table th, .card.leaderboard table td {
+  padding: 1.5%;
+}
+
+.card.leaderboard table tr:nth-child(odd) {
+  background: #f5f5f5;
+}
+
+.card.question-card p {
+  margin-top: 0;
+}
+
+.card.question-card p span {
+  display: block;
+}
+
+.card.question-card p span.userLevel {
+  font-weight: bold;
+}
+
+.card.question-card input, .card.question-card textarea {
+  margin-bottom: 0;
+}
+
+.card h1.form-title {
+  text-align: center;
+  font-size: 2em;
+  margin-top: 0;
+}
+
+p.credits {
+  text-align: center;
+  color: #aaa;
+  margin: -30px 0 0 0;
+}
+
+form {
+  margin: 0;
+  padding: 0;
+}
+
+form .form-group {
+  margin-bottom: 20px;
+}
+
+form label {
+  text-align: left;
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+
+form input, select, textarea {
+  display: block;
+  width: 100%;
+  font-size: 1em;
+  border: 1px solid #ddd;
+  height: 38px;
+  padding: 6px 10px;
+  border-radius: 4px;
+  box-shadow: none;
+  box-sizing: border-box;
+  margin-bottom: 5px;
+  background: #fff;
+}
+
+form.login input {
+  margin-bottom: 10px;
+}
+
+select {
+  color: #777;
+}
+
+form input:focus, select:focus, form textarea:focus {
+  border-color: #9b58b5;
+  outline: none;
+}
+
+form input[type='submit'] {
+  background: #9b58b5;
+  color: #fff;
+  text-transform: uppercase;
+  font-size: 1em;
+  letter-spacing: 1px;
+  font-weight: bold;
+  margin-bottom: 0;
+}
+
+
+/* RESPONSIVE STYLING */
+
+@media (max-width: 1000px) {
+    header {
+        padding-top:0;
+        height: 55px!important;
+        line-height: 55px!important
+    }
+    header a {
+        font-size: 95%;
+        height: auto
+    }
+    nav {
+        position: fixed;
+        left: 0;
+        right: 0;
+        top: 0;
+        overflow-x: auto;
+        white-space: nowrap;
+        text-align: left;
+        background: #fff;
+        z-index: 9000;
+        border-bottom: 1px solid #eee
+    }
+    nav .mob-logo {
+        display: inline-block;
+        font-size: 140%
+    }
+    header nav li:last-child a {
+        margin-right: 25px
+    }
+    footer {
+        display: none
+    }
+    header nav li a,footer nav li a {
+        height: 30px!important;
+        line-height: 30px!important
+    }
+    header .left {
+        display: none
+    }
+}

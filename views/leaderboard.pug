@@ -1,0 +1,15 @@
+extends layout
+
+block content
+  .card.leaderboard
+    h1.form-title Leaderboard
+    table
+      tr
+        th Rank
+        th Team
+        th Level
+      each team, index in leaderboard
+        tr
+          td= index+1
+          td= team.username
+          td= team.level

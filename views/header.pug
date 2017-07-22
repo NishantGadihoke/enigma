@@ -1,0 +1,23 @@
+header#masthead
+  .container
+    .four.columns.left
+      a.handletter(href='/') Enigma
+    .eight.columns.right
+      nav
+        ul
+          if currentUser
+            li
+              a(href='/') Play
+            li
+              a(href='/leaderboard') Leaderboard
+            li
+              a(href='/logout') Logout from 
+                b #{currentUser.username}
+          else
+            li
+              a(href='/login') Login
+            li
+              a(href='/register') Register
+            li
+              a(href='/leaderboard') Leaderboard
+             

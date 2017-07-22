@@ -1,0 +1,13 @@
+extends layout
+
+block content
+  .card
+    h1.form-title Login to Enigma
+    if error
+      p.error= error
+    form(method='post', action='/login').login
+      input(type='text', name='username', placeholder='Team Name', maxlength='25', required)
+      input(type='password', name='password', placeholder='Team Password', required)
+      input(type='submit', value='Log In')
+  p.credits Designed &amp; developed by 
+    a(href='http://minet/co') MINET
