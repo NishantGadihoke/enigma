@@ -50,7 +50,7 @@ router.get('/register', (req, res, next) => {
 router.post('/register', function(req, res) {
   User.register(new User({
       username : req.body.username,
-      email: req.body.email,
+      // email: req.body.email,
       level: 0,
     }), req.body.password, function(err, user) {
     if (err) {
