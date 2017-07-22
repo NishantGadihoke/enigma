@@ -8,9 +8,9 @@ block content
     p
       span.userLevel Level #{currentUser.level}:
       if isOver
-        <img src="https://imgflip.com/i/1swb24" alt="Tum jeet gayye!" max-width="100%">
+        <img src="https://i.imgflip.com/1swb24.jpg" alt="Tum jeet gayye!" max-width="100%">
       else
-      span.question #{question}
+        span.question #{question}
     if !isOver
       form(method='post', action='play')
         input(type='text', placeholder='Press enter to submit', name='answer', maxlength='30', required)
