@@ -148,7 +148,7 @@ router.get('/logs', (req, res, next) => {
     res.redirect('/');
   }
   Logs.find().sort('-time').exec(function(err, logs) {
-    return res.render('logs', { logs: logs, title: 'Logs' });
+    return res.render('logs', { logs: logs, title: 'Logs', isLogs: true });
     console.log(logs);
   });
 });
