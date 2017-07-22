@@ -17,6 +17,9 @@ router.get('/', (req, res, next) => {
 
 //Render login page
 router.get('/login', (req, res, next) => {
+  if (user) {
+    return res.redirect('/');
+  }
   return res.render('login', { title: 'Login' });
 });
 
@@ -43,6 +46,9 @@ router.get('/logout', (req, res, next) => {
 
 //Render register page
 router.get('/register', (req, res, next) => {
+  if (user) {
+    return res.redirect('/');
+  }
   return res.render('register', { title: 'Register' });
 });
 
