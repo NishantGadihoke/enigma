@@ -91,7 +91,6 @@ router.post('/play', (req, res, next) => {
   var currentUserLevel = req.user.level;
   var currentUserId = req.user.id;
 
-
   var logData = {
     username: req.user.username,
     level: currentUserLevel,
@@ -152,6 +151,39 @@ router.get('/logs', (req, res, next) => {
     return res.render('logs', { logs: logs, title: 'Logs' });
     console.log(logs);
   });
+});
+
+//Render manage teams page
+router.get('/manage', (req, res, next) => {
+  if (req.user.username != 'admin' || !req.user.username) {
+    res.redirect('/');
+  }
+  User.find().sort('-level').sort('lastLevelOn').exec(function(err, teams) {
+    return res.render('manage', { teams: teams, title: 'Manage Teams' });
+  });
+});
+//SET LEVEL for teams
+router.post('/manage', (req, res, next) => {
+  User.findOne({username: req.body.username}, function(err, user) {
+    user.level = req.body.newLevel;
+    user.lastLevelOn = new Date();
+    user.save();
+  });
+  return res.redirect('/manage');
+});
+
+router.get('/disqualify', (req, res, next) => {
+  if (req.user.username != 'admin' || !req.user.username) {
+    res.redirect('/');
+  }
+  User.find().sort('-level').sort('lastLevelOn').exec(function(err, teams) {
+    return res.render('disqualify', { teams: teams, title: 'Disqualify' });
+  });
+});
+
+router.post('/disqualify', (req, res, next) => {
+  User.findOne({username: req.body.username}).remove().exec();
+  return res.redirect('/disqualify');
 });
 
 

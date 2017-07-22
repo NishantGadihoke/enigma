@@ -121,6 +121,35 @@ header nav ul li a {
   background: #f5f5f5;
 }
 
+/*.card.manage button {
+  display: inline-block;
+  font-size: 1em;
+  width: 49%;
+  border: 1px solid;
+  padding: 6px 10px;
+  border-radius: 4px;
+  box-shadow: none;
+  box-sizing: border-box;
+  -webkit-appearance: none;
+  outline: none;
+  cursor: pointer;
+  font-weight: bold;
+  margin: 10px 0 0 0;
+}
+
+.card.manage button.red {
+  background: #ff3b30;
+  border-color: #ff3b30;
+  color: #fff;
+}
+
+.card.manage button.green {
+  background: #4cd964;
+  border-color: #4cd964;
+  color: #fff;
+  float: right;
+}*/
+
 .card.question-card p {
   margin-top: 0;
 }
@@ -141,6 +170,10 @@ header nav ul li a {
   text-align: center;
   font-size: 2em;
   margin-top: 0;
+}
+
+.card h1.error {
+  margin-bottom: 0;
 }
 
 .card img.end {
@@ -190,10 +223,6 @@ form input, select, textarea {
 
 form.login input {
   margin-bottom: 10px;
-}
-
-select {
-  color: #777;
 }
 
 form input:focus, select:focus, form textarea:focus {

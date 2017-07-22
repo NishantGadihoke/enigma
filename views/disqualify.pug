@@ -1,0 +1,13 @@
+extends layout
+
+block content
+  .card.manage
+    h1.form-title Disqualify Teams
+    form(method='post', action='/disqualify')
+      label Select team:
+      select.select-teams(name='username')
+        each team in teams
+          option= team.username
+      input(type='submit', value='Disqualify')
+      //- button.red(type='submit', method='post', action='/manage') Demote by 1
+      //- button.green(type='submit', method='post', action='/manage') Promote by 1

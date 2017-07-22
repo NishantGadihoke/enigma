@@ -1,0 +1,15 @@
+extends layout
+
+block content
+  .card.manage
+    h1.form-title Manage Teams
+    form(method='post', action='/manage')
+      label Select team:
+      select.select-teams(name='username')
+        each team in teams
+          option= team.username
+      label Set new level:
+      input(type='number' name='newLevel', placeholder='New level')
+      input(type='submit', value='Set level')
+      //- button.red(type='submit', method='post', action='/manage') Demote by 1
+      //- button.green(type='submit', method='post', action='/manage') Promote by 1
