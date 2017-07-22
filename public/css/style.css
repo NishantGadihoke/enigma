@@ -237,6 +237,9 @@ form input[type='submit'] {
     header nav li:last-child a {
         margin-right: 25px
     }
+    section#main {
+      margin-top: 60px;
+    }
     .card {
       width: 100%;
       font-size: 0.9em;
