@@ -240,7 +240,7 @@ form input[type='submit'] {
     section#main {
       margin-top: 60px;
     }
-    .card {
+    .card, .card.question-card, .card.leaderboard {
       width: 100%;
       font-size: 0.9em;
       padding: 5%;
@@ -255,7 +255,7 @@ form input[type='submit'] {
       font-size: 0.8em;
     }
     h1.title {
-      font-size: 1em;
+      font-size: 2em;
     }
     footer {
         display: none

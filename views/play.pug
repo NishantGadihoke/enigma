@@ -5,12 +5,11 @@ block content
   .card.question-card
     if error
       p.error= error
-    if !isOver
+    if isOver
+      img(src='https://i.imgflip.com/1swb24.jpg', alt='Tum jeet gayye!')
+    else
       p
         span.userLevel Level #{currentUser.level}:
         span.question #{question}
         form(method='post', action='play')
-          input(type='text', placeholder='Press enter to submit', name='answer', maxlength='30', required)
-    else
-      img(src='https://i.imgflip.com/1swb24.jpg', alt='Tum jeet gayye!')
-      
+          input(type='text', placeholder='Press enter to submit', name='answer', maxlength='30', required)      
