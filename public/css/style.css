@@ -181,6 +181,7 @@ form input, select, textarea {
   box-sizing: border-box;
   margin-bottom: 5px;
   background: #fff;
+  -webkit-appearance: none;
 }
 
 form.login input {
