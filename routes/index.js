@@ -78,7 +78,6 @@ router.post('/register', function(req, res) {
 router.get('/leaderboard', (req, res, next) => {
   User.find().sort('-level').sort('lastLevelOn').exec(function(err, leaderboard) {
     return res.render('leaderboard', { leaderboard: leaderboard, title: 'Leaderboard' });
-    console.log(leaderboard);
   });
 });
 
@@ -130,7 +129,7 @@ router.post('/play', (req, res, next) => {
         user.save();
       }
     });
-    return res.redirect('/play');
+    return res.redirect('/');
   });
 });
 

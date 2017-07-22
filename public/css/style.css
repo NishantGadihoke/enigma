@@ -66,6 +66,7 @@ header, footer {
   background: #fff;
   height: 70px;
   line-height: 70px;
+  border-bottom: 1px solid #ddd;
 }
 
 header nav ul {
@@ -140,6 +141,11 @@ header nav ul li a {
   text-align: center;
   font-size: 2em;
   margin-top: 0;
+}
+
+h1.title {
+  text-align: center;
+  font-size: 3em;
 }
 
 p.credits {

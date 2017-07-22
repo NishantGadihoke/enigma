@@ -7,7 +7,7 @@ var LocalStrategy = require('passport-local').Strategy;
 var app = express();
 
 //Make new databse
-mongoose.connect("localhost/enigma");
+mongoose.connect("mongodb://nishant:nishant@ds115573.mlab.com:15573/enigma");
 var db = mongoose.connection;
 //If Mongo Error
 db.on('error', console.error.bind(console, 'connection error'));
@@ -26,7 +26,7 @@ passport.use(new LocalStrategy(User.authenticate()));
 passport.serializeUser(User.serializeUser());
 passport.deserializeUser(User.deserializeUser());
 
-var Question = require('./models/question');
+// var Question = require('./models/question');
 
 app.use((req, res, next) => {
   res.locals.currentUser = req.user;

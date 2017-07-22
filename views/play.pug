@@ -1,6 +1,7 @@
 extends layout
 
 block content
+  h1.title Enigma 2017
   .card.question-card
     if error
       p.error= error
@@ -9,4 +10,4 @@ block content
       span.question #{question}
     if !isOver
       form(method='post', action='play')
-        input(type='text', placeholder='Answer', name='answer', maxlength='30', required)
+        input(type='text', placeholder='Press enter to submit', name='answer', maxlength='30', required)
