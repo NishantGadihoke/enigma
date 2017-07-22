@@ -143,6 +143,10 @@ header nav ul li a {
   margin-top: 0;
 }
 
+.card img.end {
+  max-width: 100%;
+}
+
 h1.title {
   text-align: center;
   font-size: 3em;
