@@ -147,7 +147,7 @@ router.get('/logs', (req, res, next) => {
   if (req.user.username != 'admin') {
     res.redirect('/');
   }
-  Logs.find().sort('-time').exec(function(err, logs) {
+  Logs.find().sort('-time').limit(50).exec(function(err, logs) {
     return res.render('logs', { logs: logs, title: 'Logs', isLogs: true });
     console.log(logs);
   });
