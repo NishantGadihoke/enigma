@@ -12,9 +12,6 @@ block content
         span.userLevel Level #{currentUser.level}:
         span.question #{question}
       form(method='post', action='play')
-        input(type='text', placeholder='Press enter to submit', name='answer', maxlength='30', id="answer", onkeypress="this.value = this.value.toLowerCase();", required)
+        input(type='text', placeholder='Press enter to submit', name='answer', maxlength='30', id="answer", required)
   p.credits Designed &amp; developed by 
     a(href='https://minet.co') MINET
-    
-  script(type="text/javascript", src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js")
-  script(type="text/javascript", src='/js/script.js')
