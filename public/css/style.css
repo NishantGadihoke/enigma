@@ -21,6 +21,11 @@ body {
   background: #f5f5f5;
 }
 
+::selection {
+  background: #9b58b5;
+  color: #fff;
+}
+
 /* Grid System */
 .column,.columns,.container{width:100%;-moz-box-sizing:border-box;box-sizing:border-box}.container{position:relative;width:90%;max-width:960px;margin:0 auto}.column,.columns{float:left}.container:after,.row:after{content:"";display:table;clear:both}@media (min-width:400px){.container{width:85%;padding:0}}@media (min-width:550px){.container{width:80%}.column,.columns{margin-left:4%}.column:first-child,.columns:first-child{margin-left:0}.one.column,.one.columns{width:4.66666666667%}.two.columns{width:13.3333333333%}.three.columns{width:22%}.four.columns{width:30.6666666667%}.five.columns{width:39.3333333333%}.six.columns{width:48%}.seven.columns{width:56.6666666667%}.eight.columns{width:65.3333333333%}.nine.columns{width:74%}.ten.columns{width:82.6666666667%}.eleven.columns{width:91.3333333333%}.twelve.columns{width:100%;margin-left:0}}
 
@@ -162,6 +167,11 @@ header nav ul li a {
   font-weight: bold;
 }
 
+.card.question-card p span.question {
+  white-space: pre-line;
+  max-width: 100%;
+}
+
 .card.question-card input, .card.question-card textarea {
   margin-bottom: 0;
 }
@@ -204,6 +214,19 @@ form label {
   text-align: left;
   font-weight: bold;
   margin-bottom: 5px;
+  display: block;
+}
+
+form label.single {
+  margin: 20px 0;
+}
+
+.card.levels form label.single {
+  margin: 5px 0;
+}
+
+form label.single span#currentLevel {
+  color: #9b58b5;
 }
 
 form input, select, textarea {
@@ -239,12 +262,16 @@ form input[type='submit'] {
   letter-spacing: 1px;
   font-weight: bold;
   margin-bottom: 0;
+  margin-top: 15px;
 }
 
+li.mob-logo {
+  display: none;
+}
 
 /* RESPONSIVE STYLING */
 
-@media (max-width: 1000px) {
+@media (max-width: 750px) {
     header {
         padding-top:0;
         height: auto;
@@ -265,9 +292,15 @@ form input[type='submit'] {
         background: #fff;
         z-index: 9000;
     }
-    nav .mob-logo {
+    li.mob-logo {
+      display: inline-block;
+    }
+    .mob-logo a img {
         display: inline-block;
-        font-size: 140%
+        max-height: 50px;
+        padding: 5px 0 0 0;
+        line-height: 20px;
+        margin: -10px 0 -20px 0;
     }
     header nav li:last-child a {
         margin-right: 25px
@@ -302,4 +335,50 @@ form input[type='submit'] {
     header .left {
         display: none
     }
+}
+
+
+/* LOGS RELOAD ANIMATION */
+
+.animated {
+    -webkit-animation-duration: 20s;
+    animation-duration: 20s;
+    -webkit-animation-fill-mode: both;
+    animation-fill-mode: both;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    -webkit-user-select: none;
+}
+
+.yt-loader {
+    -webkit-animation-name: horizontalProgressBar;
+    animation-name: horizontalProgressBar;
+    -webkit-animation-timing-function: ease;
+    animation-timing-function: ease;
+    background: #9b58b5;
+    height: 3px;
+    left: 0;
+    position: fixed;
+    top: 0;
+    width: 0%;
+    z-index: 9999;
+    box-shadow: 0 0 10px 0 rgba(0,0,0,0.69);
+}
+
+@keyframes horizontalProgressBar
+{
+    0%   {width: 0%;}
+    25%  {width: 25%;}
+    50%  {width: 50%;}
+    75%  {width: 75%;}
+    100% {width:100%;}
+}
+
+@-webkit-keyframes horizontalProgressBar /* Safari and Chrome */
+{
+    0%   {width: 0%;}
+    25%  {width: 25%;}
+    50%  {width: 50%;}
+    75%  {width: 75%;}
+    100% {width:100%;}
 }

@@ -81,7 +81,6 @@ router.get('/play', (req, res, next) => {
   }
   Question.getQuestion(req.user.level, (question, isOver) => {
     return res.render('play', { question: question, isOver: isOver, title: 'Level ' + req.user.level });
-    console.log(question);
   });
 });
 
@@ -98,7 +97,6 @@ router.post('/play', (req, res, next) => {
     time: new Date()
   };
 
-  console.log(logData);
   //LOG creation
   Logs.create(logData, (error, log) => {
     if (error) {
@@ -149,34 +147,54 @@ router.get('/logs', (req, res, next) => {
   }
   Logs.find().sort('-time').limit(50).exec(function(err, logs) {
     return res.render('logs', { logs: logs, title: 'Logs', isLogs: true });
-    console.log(logs);
   });
 });
 
 //Render manage teams page
-router.get('/manage', (req, res, next) => {
+router.get('/teams', (req, res, next) => {
   if (req.user.username != 'admin' || !req.user.username) {
     res.redirect('/');
   }
   User.find().sort('-level').sort('lastLevelOn').exec(function(err, teams) {
-    return res.render('manage', { teams: teams, title: 'Manage Teams' });
+    Question.find().sort('level').exec(function(err, question) {
+      return res.render('teams', { teams: teams, questions: question, title: 'Manage Teams' });
+    });
   });
 });
 //SET LEVEL for teams
-router.post('/manage', (req, res, next) => {
+router.post('/teams', (req, res, next) => {
   User.findOne({username: req.body.username}, function(err, user) {
     user.level = req.body.newLevel;
     user.lastLevelOn = new Date();
     user.save();
   });
-  return res.redirect('/manage');
+  return res.redirect('/teams');
+});
+
+//Render manage questions page
+router.get('/questions', (req, res, next) => {
+  if (req.user.username != 'admin' || !req.user.username) {
+    res.redirect('/');
+  }
+  Question.find().sort('level').exec(function(err, question) {
+    return res.render('questions', { questions: question, title: 'Manage Questions' });
+  });
+});
+//SET ANSWERS for questions
+router.post('/questions', (req, res, next) => {
+  Question.findOne({level: req.body.level}, function(err, question) {
+    question.question = req.body.question;
+    question.answer = req.body.answer;
+    question.save();
+  });
+  return res.redirect('/questions');
 });
 
 router.get('/disqualify', (req, res, next) => {
   if (req.user.username != 'admin' || !req.user.username) {
     res.redirect('/');
   }
-  User.find().sort('-level').sort('lastLevelOn').exec(function(err, teams) {
+  User.find().sort('username').sort('lastLevelOn').exec(function(err, teams) {
     return res.render('disqualify', { teams: teams, title: 'Disqualify' });
   });
 });
